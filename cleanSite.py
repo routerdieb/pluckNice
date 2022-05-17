@@ -11,8 +11,10 @@ def clean_site(name):
             continue
         if(name in line):
             print(line)
-            subprocess.run(['pluck', '-',line])
-            is_removed = True
+            x = input("Delete? y/n")
+            if (x.startswith("y")):
+                subprocess.run(['pluck', '-',line])
+                is_removed = True
     return is_removed
 
 if __name__ == "__main__":
