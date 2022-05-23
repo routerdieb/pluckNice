@@ -11,7 +11,7 @@ def clean_site(name):
             continue
         if(name in line):
             print(line)
-            x = input("Delete? y/n")
+            x = input("Delete? y/n:")
             if (x.startswith("y")):
                 subprocess.run(['pluck', '-',line])
                 is_removed = True
@@ -27,6 +27,6 @@ if __name__ == "__main__":
             has_removed_smth = True
 
     if has_removed_smth:
-        print("the lines above have been removed")
+        print("above decision were applied")
     else:
-        print("no entry in the configuration matched")
+        print("no change applied")
