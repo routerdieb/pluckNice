@@ -5,5 +5,7 @@ from hideSettings import *
 if __name__ == "__main__":
     if sys.argv[1] == 'setTimeout':
         setSettingClean('timeout',sys.argv[2])
-    if sys.argv[1] == 'prevent':
-        appendSetting('preventUrls',sys.argv[2])
+    if sys.argv[1] == 'preventUrl':
+        appendSetting('preventUrl',sys.argv[2])
+    if sys.argv[1] == 'preventRegex':
+        pass#coming soon

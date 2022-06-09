@@ -19,10 +19,9 @@ def getSingleSetting(name):
     for line in export.split("\r\n"):
         if PartAllowline in line:
             if(line.startswith('#')):
-                print('either setting pending or a pending conflict')
-                return NULL
-            else:
-                return line
+                line = re.sub(r'^.*?[+] ', '', line)
+            value = re.search('.*=(.*)',line).group(1)
+            return value
 
 def cleanSetting(name):
     PartAllowline = f'allow https://settings.arpa/?{name}'
