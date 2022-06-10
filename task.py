@@ -41,6 +41,8 @@ while True:
     result = subprocess.run(['pluck', 'export'], stdout=subprocess.PIPE)
     export = result.stdout.decode('utf-8')
     for line in export.split("\r\n"):
+        if "program" in line:
+            continue
         if 'settings.arpa' in line:
             match = re.search('[?]preventUrls?=(.*)',line)
             if(match):
